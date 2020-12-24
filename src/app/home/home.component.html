@@ -1,12 +1,40 @@
 <mat-card>
-    <mat-card-header>
-      <mat-card-title>
-        Course Outline
-      </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
+  <mat-card-header>
+    <mat-card-title>
+      {{ title }}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <!-- LESSON LIST -->
 
-      <!-- LESSON LIST -->
-      
-    </mat-card-content>
-  </mat-card>
+    <mat-list dense>
+        <mat-list-item *ngFor="let lesson of courseLessons" (click)="getLesson(lesson)">
+           <h3>{{lesson.title}}</h3> 
+        </mat-list-item>
+    </mat-list>
+
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>DEBUG</mat-card-title>
+
+        </mat-card-header>
+       
+        <mat-card-content>
+          <span *ngIf ='currentLesson ; else dosraBlock' >{{currentLesson | json}}</span>
+          <ng-template #dosraBlock>Select the Lesson</ng-template>
+            
+        </mat-card-content>
+        
+       
+    </mat-card>
+
+    <!-- {{ color }}
+    <hr />
+    <span [style.color]="color">I'm Just Learning Angular </span>
+    <hr />
+
+    <input name="color" matInput [(ngModel)]="color" type="text" />
+    <hr>
+    <button mat-button (mouseleave)="chnageColor()">Chnage Color</button> -->
+  </mat-card-content>
+</mat-card>
