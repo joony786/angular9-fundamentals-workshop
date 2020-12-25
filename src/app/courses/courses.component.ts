@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CoursesService } from '../shared/services/courses.service';
 
 @Component({
   selector: 'app-courses',
@@ -8,34 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class CoursesComponent implements OnInit {
   courseLessons = null;
 
-  courses = [
-    {
-      id: 1,
-      title: 'Angular 9 Fundamentals',
-      description: 'Learn the fundamentals of Angular 9',
-      percentComplete: 26,
-      favorite: true,
-    },
-    {
-      id: 2,
-      title: 'Java Scripts the hard Parts',
-      description: 'Learn the fundamentals of Js ',
-      percentComplete: 60,
-      favorite: true,
-    },
-    {
-      id: 3,
-      title: 'React 17 Fundamentals',
-      description: 'Learn the fundamentals of React ',
-      percentComplete: 44,
-      favorite: true,
-    },
-  ];
+  courses=null;
 
-  constructor() {}
+  constructor(private coursesService:CoursesService) {}
 
   ngOnInit(): void {
     this.resetCourseLessons();
+    this.courses = this.coursesService.courses;
   }
 
 
