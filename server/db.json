@@ -2,10 +2,17 @@
   "courses": [
     {
       "id": 1,
-      "title": "Angular 9 Fundamentals",
-      "description": "Learn the fundamentals of Angular 9",
-      "percentComplete": 26,
+      "title": "hamza",
+      "description": "react",
+      "percentComplete": 43,
       "favorite": true
+    },
+    {
+      "id": 2,
+      "title": "JUNAID",
+      "description": "ANGULAR",
+      "percentComplete": 59,
+      "favorite": false
     }
   ]
 }

@@ -127,5 +127,9 @@
       }
     }
   },
-  "defaultProject": "angular9-fundamentals-workshop"
+  "defaultProject": "angular9-fundamentals-workshop",
+  "cli": {
+    "analytics": false,
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

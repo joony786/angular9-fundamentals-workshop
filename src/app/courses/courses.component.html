@@ -1,5 +1,25 @@
 <div class="courses-containers">
-  <div class="courses-list">
+ <app-courses-list 
+ [courses]='courses'
+ (selected) = 'selectedCourse($event)'
+ (deleted) = 'deleteCourse($event)'
+ ></app-courses-list>
+  </div>
+
+  <div class="course-details">
+   <app-courses-details 
+   [course]='selectCourse'
+   (saved) = 'saveCourse($event)'
+   (cancelled) = 'cancel($event)'
+
+
+   ></app-courses-details>
+  </div>
+
+
+
+
+  <!-- <div class="courses-list">
     <mat-card>
       <mat-card-header>
         <mat-card-title>
@@ -12,7 +32,7 @@
             (click)="selectCourse(course)">
             <h3 matLine>{{course.title}}</h3>
             <p matLine>{{course.description}}</p>
-            <p matLine>{{course.description}}</p>
+           
             <button mat-icon-button color="warn"
               (click)="deleteCourse(course.id);$event.stopImmediatePropagation()">
               <mat-icon>delete</mat-icon>
@@ -22,10 +42,10 @@
 
       </mat-card-content>
     </mat-card>
-  </div>
+    </div> -->
 
-  <div class="course-details">
-    <mat-card>
+
+    <!-- <mat-card>
       <mat-card-header>
         <mat-card-title>
           <span *ngIf="selectedCourse.id; else noSelection">{{selectedCourse.title}}</span>
@@ -65,6 +85,4 @@
           <button type="button" mat-button (click)="cancel()">Cancel</button>
         </mat-card-actions>
       </form>
-    </mat-card>
-  </div>
-</div>
+    </mat-card> -->
